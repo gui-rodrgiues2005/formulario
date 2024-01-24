@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+    
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body onload="prencherNome();verificarCampos();">
+  
+      <form>
+          <h2>Formulário de Cadastro</h2>
+       
+          <label for="nome">NOME</label>
+          <input type="text" id="name" name="nome">
+          
+          <label for="email">EMAIL</label>
+          <input type="email" id="email" name="email">
+          
+        <div class="password-container">
+          <label for="senha">Senha</label>
+          <input type="password" id="senha" name="senha" oninput="senhaForte()">
+          <span id="forcaSenha"></span>
+          <span id="Versenha" onclick="VisualizarSenha()">😑</span>
+        </div> 
+           
+        <div class="idade-container">
+          <label for="Idade">IDADE</label>
+          <input type="number" id="idade" name="idade" oninput="validarIdade()">
+          <span id="idadeError"></span>
+        </div>
+
+          <label for="Genero">GÊNERO</label>
+          <fieldset class="gender-options">
+            <label class="item">
+              <input type="radio" name="gender" value="male"><strong>MASCULINO</strong>
+            </label>
+            <label class="item">
+              <input type="radio" name="gender" value="female"><strong>FEMININO</strong>
+            </label>
+            <label class="item">
+              <input type="radio" name="gender" value="other"><strong>OUTRO</strong>
+            </label>
+          </fieldset>
+          <div id="mensagemSucesso">
+          <button onclick="enviar();verificarCampos()"><strong>Enviar</strong></button></div>
+          <script src="index.js"></script>
+      </form>
+  </body>
+  </html>
+  
+</body>
+</html>
